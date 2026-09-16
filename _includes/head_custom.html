@@ -1,7 +1,69 @@
+<style>
+/* 모바일 가독성 — just-the-docs 커스텀
+   참고: _sass/custom/custom.scss 로 넣으면 remote_theme 빌드에서 테마 CSS에 규칙이
+   안 실리는 케이스를 관측했다. head_custom.html 은 반영이 확인되므로 여기에 직접 넣는다. */
+
+html { line-height: 1.75; }
+
+body, .main-content {
+  font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic",
+               "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;   /* iOS 자동 폰트 확대 방지 */
+}
+
+.main-content {
+  font-size: 1.02rem;               /* 모바일 본문 확대 */
+  word-break: keep-all;             /* 한국어 단어 중간 절단 방지 */
+  overflow-wrap: anywhere;
+}
+
+/* 표가 화면 밖으로 나가지 않게 가로 스크롤 */
+.main-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 0.92rem;
+}
+.main-content table th,
+.main-content table td { white-space: normal; }
+
+/* 코드 블록: 모바일에서는 감싸서 읽는 게 가로 스크롤보다 낫다 */
+.main-content pre, .highlight pre, .highlight pre code {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  font-size: 0.86rem !important;
+  line-height: 1.6;
+  tab-size: 2;
+}
+.main-content code { font-size: 0.88em; }
+
+/* 인용 블록 모바일 여백 */
+.main-content blockquote {
+  margin-left: 0;
+  padding-left: 0.9rem;
+  font-size: 0.96rem;
+}
+
+/* 좁은 화면 타이밍 */
+@media (max-width: 740px) {
+  .main-content h1 { font-size: 1.5rem; }
+  .main-content h2 { font-size: 1.25rem; }
+  .main-content h3 { font-size: 1.1rem; }
+  .site-title { font-size: 1.1rem !important; }
+}
+
+/* 머메이드 다이어그램 컨테이너 */
+.mermaid-render { overflow-x: auto; margin: 1rem 0; text-align: center; }
+.mermaid-render svg { max-width: 100%; height: auto; }
+</style>
+
 <script type="module">
   // kramdown이 ```mermaid 를 <pre class="language-mermaid"><code>로 렌더링하므로
   // 실행 전에 div로 바꿔 머메이드에 넘긴다.
-  document.querySelectorAll('pre.language-mermaid').forEach((pre) => {
+  document.querySelectorAll('pre.language-mermaid, code.language-mermaid').forEach((el) => {
+    const pre = el.closest('pre') || el;
+    if (pre.dataset.mermaidDone) return;
+    pre.dataset.mermaidDone = '1';
     const div = document.createElement('div');
     div.className = 'mermaid mermaid-render';
     div.textContent = pre.textContent;
