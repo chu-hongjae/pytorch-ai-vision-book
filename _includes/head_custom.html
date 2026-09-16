@@ -55,11 +55,14 @@ body, .main-content {
 /* 머메이드 다이어그램 컨테이너 */
 .mermaid-render { overflow-x: auto; margin: 1rem 0; text-align: center; }
 .mermaid-render svg { max-width: 100%; height: auto; }
+.mermaid-fallback { margin: 1rem 0; padding: .6rem .8rem; border: 1px dashed #b4bbce;
+                    border-radius: 6px; background: #fff8e6; font-size: .86rem; }
+.mermaid-fallback pre { margin-top: .5rem; }
 </style>
 
 <script type="module">
-  // kramdown이 ```mermaid 를 <pre class="language-mermaid"><code>로 렌더링하므로
-  // 실행 전에 div로 바꿔 머메이드에 넘긴다.
+  // kramdown이 ```mermaid 를 <pre class="language-mermaid"><code> 또는
+  // <pre><code class="language-mermaid"> 로 렌더링하므로 실행 전에 div로 바꾼다.
   document.querySelectorAll('pre.language-mermaid, code.language-mermaid').forEach((el) => {
     const pre = el.closest('pre') || el;
     if (pre.dataset.mermaidDone) return;
@@ -70,8 +73,10 @@ body, .main-content {
     pre.replaceWith(div);
   });
 
-  const { default: mermaid } =
-    await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+  const { default: mermaid } = await import(
+    'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
+  );
+
   mermaid.initialize({
     startOnLoad: false,
     securityLevel: 'loose',
@@ -79,5 +84,22 @@ body, .main-content {
     flowchart: { curve: 'basis', useMaxWidth: true },
     fontFamily: '"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif',
   });
-  await mermaid.run({ querySelector: '.mermaid' });
+
+  // 그림 하나가 실패해도 나머지가 같이 죽지 않게 건별로 격리한다.
+  let n = 0;
+  for (const el of document.querySelectorAll('.mermaid')) {
+    const src = el.textContent;
+    try {
+      const { svg } = await mermaid.render('jtd-mmd-' + n++, src);
+      el.innerHTML = svg;
+    } catch (err) {
+      const box = document.createElement('details');
+      box.className = 'mermaid-fallback';
+      box.innerHTML =
+        '<summary>다이어그램을 렌더하지 못해서 원문으로 표시합니다.</summary>' +
+        '<pre><code class="language-mermaid"></code></pre>';
+      box.querySelector('code').textContent = src;
+      el.replaceWith(box);
+    }
+  }
 </script>
