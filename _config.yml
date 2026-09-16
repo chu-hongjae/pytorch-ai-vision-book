@@ -1,5 +1,5 @@
-title: PyTorch · Tensor에서 이미지 분류까지
-description: FE/BE 개발자와 딥러닝 초심자를 위한, 실제로 실행한 결과만으로 쓴 PyTorch 도서
+title: PyTorch 기초서
+description: 딥러닝이 처음인 사람을 위한 PyTorch 기초서 + FE/BE 개발자를 위한 AI 전향 가이드
 remote_theme: just-the-docs/just-the-docs
 lang: ko
 

@@ -1,13 +1,13 @@
 ---
-title: "PyTorch 도서"
+title: "PyTorch 기초서"
 layout: default
 nav_order: 2
-description: "PyTorch로 시작하는 딥러닝 — tensor에서 이미지 분류까지"
-nav_title: "📕 PyTorch — Tensor에서 이미지 분류까지"
+description: "PyTorch 기초서 — 숫자 상자에서 이미지 분류까지"
+nav_title: "📕 PyTorch 기초서"
 has_children: true
 ---
 
-# PyTorch로 시작하는 딥러닝 — tensor에서 이미지 분류까지
+# PyTorch 기초서 — tensor에서 이미지 분류까지
 
 > `03_ai_vision/pytorch` 폴더의 학습 메모와 `simple_classifier.py` 한 편을,
 > 처음부터 이미지 분류까지 단계별로 따라가는 전문 기술 도서로 재구성한 것입니다.
@@ -31,7 +31,7 @@ has_children: true
 
 | 장 | 제목 | 다루는 것 | 원본 메모 대응 |
 |----|------|-----------|----------------|
-| [00](00_preface.md) | 서문 · 환경 설정 | 버전 확인, CPU/GPU, 재현 시드 | 학습 목표 |
+| [00](00_preface.md) | PyTorch가 뭐예요? | 이 책의 주인공은 반복문 하나, 강아지 훈련 비유, 준비 확인 한 줄 | 학습 목표 |
 | [01](01_tensors.md) | Tensor — 데이터를 담는 그릇 | 생성·연산·`shape`·broadcasting | `tensor operations` |
 | [02](02_autograd.md) | Autograd — 기울기의 자동화 | `requires_grad`, `backward()`, 계산 그래프 | `loss function`(접근) |
 | [03](03_loss_optimizer.md) | Loss와 Optimizer — 학습의 두 바퀴 | MSE, 경사 하강법, 학습률, 발산 | `loss function`·`optimizer` |
@@ -135,4 +135,4 @@ book/
 
 ---
 
-*시작하려면 → [00. 서문 · 환경 설정](00_preface.md)*
+*시작하려면 → [00. 서문 — PyTorch가 뭐예요?](00_preface.md)*

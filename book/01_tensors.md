@@ -2,7 +2,7 @@
 title: "01 · Tensor — 데이터를 담는 그릇"
 layout: default
 nav_order: 4
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "01 · Tensor — 데이터를 담는 그릇"
 ---
 

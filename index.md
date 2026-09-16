@@ -2,22 +2,23 @@
 title: Home
 layout: default
 nav_order: 1
-description: "Physical AI 학습 로드맵 03_ai_vision · PyTorch 도서 2종"
+description: "Physical AI 학습 로드맵 03_ai_vision · PyTorch 기초서 + 전향 가이드"
 ---
-# PyTorch 도서 2종
+# PyTorch 기초서 & AI 전향 가이드
 
 {: .fs-5 .mb-4 }
-로봇 비전 학습(`03_ai_vision`)을 위해 쓴 도서 두 권이에요. 두 권 모두 하나의 공통된 약속이 있습니다. 모든 코드를 실제로 실행해서 나온 결과만 실었다는 점이죠. 추측 수치를 안 넣는 게 생각보다 어려운 약속이라, 미리 밝혀 둡니다.
+로봇 비전 학습(`03_ai_vision`)을 위해 쓴 두 권이에요. 📕는 딥러닝이 처음인 사람을 위한 **PyTorch 기초서**,
+📗는 이미 코드를 잘 쓰는 개발자를 위한 **AI 전향 가이드**입니다. 두 권 모두 하나의 공통된 약속이 있습니다. 모든 코드를 실제로 실행해서 나온 결과만 실었다는 점이죠. 추측 수치를 안 넣는 게 생각보다 어려운 약속이라, 미리 밝혀 둡니다.
 
 ---
 
-## 📕 [PyTorch — Tensor에서 이미지 분류까지](book/README.md)
+## 📕 [PyTorch 기초서 — Tensor에서 이미지 분류까지](book/README.md)
 
 `03_ai_vision/pytorch` 폴더의 학습 메모와 `simple_classifier.py` 한 편에서 출발한 개념서예요. 경사 하강법이라는 단 하나의 반복문을 먼저 손으로 세웁니다. 그다음 PyTorch API에게 그 일을 이월시키는 순서로 읽혀요.
 
 | 장 | 제목 |
 |----|------|
-| [00](book/00_preface.md) | 서문 — 환경과 재현 약속 |
+| [00](book/00_preface.md) | 서문 — PyTorch가 뭐예요? |
 | [01](book/01_tensors.md) | Tensor — 데이터를 담는 그릇 |
 | [02](book/02_autograd.md) | Autograd — 기울기의 자동화 |
 | [03](book/03_loss_optimizer.md) | Loss와 Optimizer — 학습률로 수렴과 발산을 경험 |
@@ -53,6 +54,6 @@ description: "Physical AI 학습 로드맵 03_ai_vision · PyTorch 도서 2종"
 
 ## 이 둘의 관계
 
-개념이 처음이면 📕PyTorch 도서를 먼저 펼치세요. 이미 개발 경력이 있고 방향만 AI로 돌리는 중이라면 📗전향 가이드가 먼저여도 됩니다. 전향 가이드는 📕의 API 사용을 전제하지 않거든요.
+개념이 처음이면 📕PyTorch 기초서를 먼저 펼치세요. 이미 개발 경력이 있고 방향만 AI로 돌리는 중이라면 📗전향 가이드가 먼저여도 됩니다. 전향 가이드는 📕의 API 사용을 전제하지 않거든요.
 
 [Physical AI 전체 로드맵](../README.md) · [03_ai_vision 단계](../README.md)

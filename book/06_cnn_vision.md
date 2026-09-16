@@ -2,7 +2,7 @@
 title: "06 · 이미지 분류 — CNN"
 layout: default
 nav_order: 9
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "06 · 이미지 분류 — CNN의 기본 구조"
 ---
 

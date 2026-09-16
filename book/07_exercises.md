@@ -2,7 +2,7 @@
 title: "07 · 실습 과제와 해답"
 layout: default
 nav_order: 10
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "07 · 실습 과제와 해답"
 ---
 

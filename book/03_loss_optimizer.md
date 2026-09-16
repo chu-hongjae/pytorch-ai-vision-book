@@ -2,7 +2,7 @@
 title: "03 · Loss와 Optimizer — 학습의 두 바퀴"
 layout: default
 nav_order: 6
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "03 · Loss와 Optimizer — 학습의 두 바퀴"
 ---
 

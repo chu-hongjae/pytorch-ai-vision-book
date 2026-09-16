@@ -2,7 +2,7 @@
 title: "04 · 첫 모델 — nn.Module"
 layout: default
 nav_order: 7
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "04 · 첫 모델 — `nn.Module`으로 다시 쓰기"
 ---
 

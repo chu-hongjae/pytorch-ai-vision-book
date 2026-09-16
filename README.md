@@ -3,7 +3,7 @@ title: "PyTorch"
 layout: default
 nav_exclude: true
 ---
-# PyTorch · Tensor에서 이미지 분류까지
+# PyTorch 기초서
 
 > 📱 **폰으로 읽으려면 여기서 여세요 → [GitHub Pages 문서 사이트](https://chu-hongjae.github.io/pytorch-ai-vision-book/)**
 >
@@ -16,7 +16,7 @@ nav_exclude: true
 
 | | 책 | 누구에게 |
 |---|---|---|
-| 📕 | [PyTorch — Tensor에서 이미지 분류까지](book/README.md) | 딥러닝이 처음인 사람. tensor → autograd → loss/optimizer → `nn.Module` → 미니배치 → CNN |
+| 📕 | [PyTorch 기초서 — Tensor에서 이미지 분류까지](book/README.md) | 딥러닝이 처음인 사람. tensor → autograd → loss/optimizer → `nn.Module` → 미니배치 → CNN |
 | 📗 | [FE/BE 개발자를 위한 AI 전향 가이드](switch/README.md) | 코드는 이미 잘 쓰는데 AI 방향은 처음인 사람. 패러다임 전환, 지표의 함정, 추론 API 배포 |
 
 개념이 처음이면 📕를, **이미 개발 경력이 있고 방향만 돌리는 중**이면 📗를 먼저 읽으세요.

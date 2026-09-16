@@ -2,7 +2,7 @@
 title: "05 · 실제 학습 루프 — 미니배치"
 layout: default
 nav_order: 8
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "05 · 실제 학습 루프 — 미니배치·DataLoader·과적합"
 ---
 

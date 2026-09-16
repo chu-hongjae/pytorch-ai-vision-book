@@ -2,7 +2,7 @@
 title: "부록 A · 치트시트 · 트러블슈팅"
 layout: default
 nav_order: 11
-parent: "PyTorch 도서"
+parent: "PyTorch 기초서"
 description: "부록 A · API 치트시트 · 용어 · 트러블슈팅"
 ---
 
