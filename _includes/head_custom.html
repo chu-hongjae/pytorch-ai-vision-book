@@ -1,0 +1,21 @@
+<script type="module">
+  // kramdown이 ```mermaid 를 <pre class="language-mermaid"><code>로 렌더링하므로
+  // 실행 전에 div로 바꿔 머메이드에 넘긴다.
+  document.querySelectorAll('pre.language-mermaid').forEach((pre) => {
+    const div = document.createElement('div');
+    div.className = 'mermaid mermaid-render';
+    div.textContent = pre.textContent;
+    pre.replaceWith(div);
+  });
+
+  const { default: mermaid } =
+    await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: 'loose',
+    theme: 'neutral',
+    flowchart: { curve: 'basis', useMaxWidth: true },
+    fontFamily: '"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif',
+  });
+  await mermaid.run({ querySelector: '.mermaid' });
+</script>

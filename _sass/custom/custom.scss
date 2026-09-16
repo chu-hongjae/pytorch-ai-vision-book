@@ -1,0 +1,62 @@
+/* 모바일 가독성 — just-the-docs custom override */
+
+:root {
+  /* CJK는 기본 줄높이가 좁아 빽빽하다 */
+  line-height: 1.75;
+}
+
+body, .main-content {
+  font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic",
+               "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;   /* iOS 자동 폰트 확대 방지 */
+}
+
+.main-content {
+  font-size: 1.02rem;               /* 모바일 본문 확대 */
+  word-break: keep-all;             /* 한국어 단어 중간 절단을 우선 방지 */
+  overflow-wrap: anywhere;
+}
+
+/* 표가 화면 밖으로 나가지 않게 스크롤 */
+.main-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;              /* 셀 내용보다 가로 스크롤이 낫다 */
+  font-size: 0.92rem;
+}
+.main-content table th,
+.main-content table td { white-space: normal; }
+
+/* 코드 블록: 모바일에서는 감싸서 읽는 게 스크롤보다 낫다 */
+.main-content pre, .highlight pre {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+.main-content code { font-size: 0.88em; }
+
+/* 인용 블록(주의/함정) 모바일 여백 */
+.main-content blockquote {
+  margin-left: 0;
+  padding-left: 0.9rem;
+  font-size: 0.96rem;
+}
+
+/* 좁은 화면에서 사이드바가 본문을 밀지 않게 */
+@media (max-width: 740px) {
+  .main-content h1 { font-size: 1.5rem; }
+  .main-content h2 { font-size: 1.25rem; }
+  .main-content h3 { font-size: 1.1rem; }
+  .site-title { font-size: 1.1rem !important; }
+}
+
+/* 머메이드 다이어그램 컨테이너 */
+.mermaid-render {
+  overflow-x: auto;
+  margin: 1rem 0;
+  text-align: center;
+}
+.mermaid-render svg { max-width: 100%; height: auto; }
