@@ -1,12 +1,13 @@
 ---
-title: "📕 표지 · 전체 목차"
+title: "PyTorch 도서"
 layout: default
 nav_order: 2
-parent: "PyTorch 도서"
-description: "PyTorch로 시작하는 딥러닝 —_tensor에서 이미지 분류까지_"
+description: "PyTorch로 시작하는 딥러닝 — tensor에서 이미지 분류까지"
+nav_title: "📕 PyTorch — Tensor에서 이미지 분류까지"
+has_children: true
 ---
 
-# PyTorch로 시작하는 딥러닝 —_tensor에서 이미지 분류까지_
+# PyTorch로 시작하는 딥러닝 — tensor에서 이미지 분류까지
 
 > `03_ai_vision/pytorch` 폴더의 학습 메모와 `simple_classifier.py` 한 편을,
 > 처음부터 이미지 분류까지 단계별로 따라가는 전문 기술 도서로 재구성한 것입니다.

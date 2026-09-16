@@ -1,10 +1,12 @@
 ---
-title: "📗 표지 · 전체 목차"
+title: "FE/BE → AI 전향 가이드"
 layout: default
-nav_order: 20
-parent: "FE/BE → AI 전향 가이드"
+nav_order: 12
 description: "이미 개발하는 사람에게 AI는 무엇이 어떻게 다른가 — 실측으로 배우는 전향 가이드"
+nav_title: "📗 FE/BE → AI 개발자 전향 가이드"
+has_children: true
 ---
+
 # FE/BE 개발자를 위한 AI 전향 가이드
 
 > **당신은 이미 개발자입니다.** 이 책은 변수·함수·API·배포를 설명하지 않습니다.

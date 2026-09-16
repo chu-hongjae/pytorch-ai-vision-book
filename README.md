@@ -1,3 +1,8 @@
+---
+title: "PyTorch"
+layout: default
+nav_exclude: true
+---
 # PyTorch · Tensor에서 이미지 분류까지
 
 > 📱 **폰으로 읽으려면 여기서 여세요 → [GitHub Pages 문서 사이트](https://chu-hongjae.github.io/pytorch-ai-vision-book/)**
