@@ -1,0 +1,53 @@
+title: PyTorch · Tensor에서 이미지 분류까지
+description: FE/BE 개발자와 딥러닝 초심자를 위한, 실제로 실행한 결과만으로 쓴 PyTorch 도서
+theme: just-the-docs/just-the-docs
+lang: ko
+
+url: https://chu-hongjae.github.io
+baseurl: "/pytorch-ai-vision-book"
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - README.md
+
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+search_enabled: true
+heading_anchors: true
+
+color_scheme: light
+scrolly: false
+
+aux_links:
+  "GitHub 저장소":
+    - "https://github.com/chu-hongjae/pytorch-ai-vision-book"
+
+footer_content: >-
+  모든 코드 블록과 수치는 PyTorch 2.8.0+cpu 환경에서 실제로 실행한 결과입니다.
+
+callouts_level: quiet
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: 알아두기
+    color: blue
+  warning:
+    title: 함정
+    color: red

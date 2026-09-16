@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 학습 중 생성되는 모델 가중치·데이터
+*.pt
+*.pth
+*.onnx
+data/
+runs/
+wandb/
+
+# 편집기/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 로컬 도구·스크래치
+.jekyll-cache/
+.jekyll-metadata
+_vendor/
+_add_fm.py
+qwen/
