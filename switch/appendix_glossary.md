@@ -34,9 +34,9 @@ description: "개발자 관점 용어 사전, 도구 생태계 지도, 전향자
 | 추론 | inference | 가중치 갱신 없는 계산 | 읽기 전용 엔드포인트 |
 | 일반화 | generalization | unseen에서도 맞음 | 테스트 커버리지 밖 동작 |
 | 과적합 | overfitting | train만 맞음 | 통과하는 빈 껍데기 테스트 |
-| 과소적합 | underfitting | 아不够 | 용량 부족 |
+| 과소적합 | underfitting | 표현력이 모자람 | 용량 부족 |
 | 편향 | bias | 형태 오차로 생긴 천장(01📦 A2) | 설계 오류(설정으론 못 고침) |
-| 분산 | variance | 데이터 흔들림에 민감 | 플aky 테스트와 유사 |
+| 분산 | variance | 데이터 흔들림에 민감 | flaky 테스트와 유사 |
 | 누수 | leakage | 정답 정보가 입력에 섞임 | 출력값을 입력에 넣은 테스트 |
 | 드리프트 | drift | 배포 후 입력 분포 이동 | 스키마 변경 없는 데이터 부패 |
 | 혼동 행렬 | confusion matrix | TC/FP/FN/TN | 에러 분류 트리에 대응 |
@@ -136,9 +136,10 @@ from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_m
 | 장 | 실험 | 값 |
 |----|------|-----|
 | 01 | 원형 경계, 손으로 쓴 축 임계값 | 0.8048 (= 항상-바깥 상수함수 0.80475) |
+| 01 | 피처 `x²+y²` + 임계값 한 줄 | **1.0000** |
 | 01 | 손으로 쓴 L1 다이아몬드 최선 | 0.9655 (형태 천장) |
 | 01 | MLP 피팅 (train/test) | 0.9996 / **0.9975** |
-| 03 | 타깃 누수 포함 test acc | **1.0000** (정상 0.8211) |
+| 03 | 타깃 누수 포함 test acc | **1.0000** (정상 0.8333, 항상-기준선 0.8022) |
 | 04 | Dropout `train()` 2회 호출 | 출력 상이 → 비결정 |
 | 04 | `eval()` 2회 호출 | 출력 동일 → 결정 |
 | 05 | 불균형 model accuracy | 0.9633 |
@@ -146,9 +147,10 @@ from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_m
 | 05 | 소수 클래스 재현율 | 0.4333 (17/30 놓침) |
 | 05 | 과적합 (hidden=32) train/val MSE | 0.05282 / **0.57437** |
 | 05 | 과대규제 (wd=0.02) train/val MSE | 0.10158 / 0.62204 (악화) |
-| 06 | 순수 추론 | 0.027 ms/req |
-| 06 | HTTP 왕복 (클라이언트 재사용) | 1.96 ms/req |
-| 06 | HTTP 왕복 (매번 새 클라이언트) | **324.69 ms/req** |
+| 06 | 순수 추론 | 0.022 ms/req |
+| 06 | HTTP 왕복 (클라이언트 재사용) | 1.75 ms/req |
+| 06 | HTTP 왕복 (매번 새 클라이언트) | **328.00 ms/req** |
+| 06 | 서빙 모델 test acc | 0.9983 |
 
 > 전 값: PyTorch 2.8.0+cpu / scikit-learn / numpy, 이 머신에서 실행한 stdout입니다.
 > 📕책의 실측값은 [부록 A](../book/appendix_cheatsheet.md) 참조.

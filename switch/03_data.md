@@ -129,13 +129,15 @@ for name, F in (("정상(사용량만)", feat_good), ("누수(+해지문의)", f
     Xtr_, Xte_, ytr_, yte_ = train_test_split(F, churn, test_size=0.3,
                                               random_state=0, stratify=churn)
     mdl = LogisticRegression(max_iter=1000).fit(Xtr_, ytr_)
+    baseline = max(np.bincount(yte_)) / len(yte_)      # 항상-다수클래스 상수함수
     print(f"{name:<16} train acc={accuracy_score(ytr_, mdl.predict(Xtr_)):.4f}"
-          f"  test acc={accuracy_score(yte_, mdl.predict(Xte_)):.4f}")
+          f"  test acc={accuracy_score(yte_, mdl.predict(Xte_)):.4f}"
+          f"  (항상-기준선 {baseline:.4f})")
 ```
 
 ```text
-정상(사용량만)         train acc=0.8124  test acc=0.8211
-누수(+해지문의)        train acc=1.0000  test acc=1.0000
+정상(사용량만)         train acc=0.8367  test acc=0.8333  (항상-기준선 0.8022)
+누수(+해지문의)        train acc=1.0000  test acc=1.0000  (항상-기준선 0.8022)
 ```
 
 **`test acc = 1.0000`.** 스택트레이스 없이, 경고 없이, 에러 코드 없이 이 숫자가 나옵니다.
@@ -188,7 +190,7 @@ Xte_t = (torch.tensor(Xte) - torch.tensor(mu)) / torch.tensor(sd)   # test는 tr
 ## 직접 해보기
 
 `code/ch05_traps.py`:
-1. 3.4의 `cancel_calls`를 `rng.integers(0,2,N)`(라벨과 무관)로 바꾸면 test acc가 몇으로 내려가는지 보세요. **컬럼 하나가 0.82 ↔ 1.00을 만듭니다.**
+1. 3.4의 `cancel_calls`를 `rng.integers(0,2,N)`(라벨과 무관)로 바꾸면 test acc가 몇으로 내려가는지 보세요. **컬럼 하나가 0.83 ↔ 1.00을 만듭니다.**
 2. 현재 당신의 서비스에서 "예측 시점에 존재하지 않을 컬럼"을 하나 찾아보세요. (생성 타임스탬프가 라벨 발생 이후인 것)
 3. 층화 없이 `stratify=None`으로 20번 돌려 val acc가 얼마나 흔들리는지 측정하세요. 표본 오차 감각이 생깁니다.
 
